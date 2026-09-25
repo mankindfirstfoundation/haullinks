@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="color-scheme" content="light dark">
+  <title>Sign in | HaulLinks</title>
+  <style>
+    :root{--navy:#102d47;--navy2:#174b74;--amber:#f2ad2f;--ink:#20394d;--muted:#687b8b;--line:#d8e1e8;--bg:#eef3f6;--danger:#b8323c;--success:#167550}
+    *{box-sizing:border-box}html,body{min-height:100%;margin:0}body{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 15% 10%,rgba(242,173,47,.14),transparent 25%),linear-gradient(145deg,#edf3f7,#f8fafb 50%,#e7eef3);color:var(--ink);display:grid;place-items:center;padding:24px}
+    .shell{width:min(960px,100%);min-height:570px;background:#fff;border:1px solid rgba(16,45,71,.14);border-radius:20px;box-shadow:0 28px 75px rgba(13,40,61,.16);overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr}
+    .intro{background:linear-gradient(145deg,#0e2942,#184f79);color:#fff;padding:52px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}.intro:before,.intro:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.08)}.intro:before{width:380px;height:380px;right:-180px;top:-160px}.intro:after{width:270px;height:270px;left:-150px;bottom:-150px}
+    .brand{position:relative;z-index:1;display:flex;align-items:center;gap:12px}.mark{width:48px;height:48px;border-radius:13px;background:#fff;display:grid;place-items:center;padding:4px;overflow:hidden}.mark img{width:100%;height:100%;object-fit:contain}.brand-name{font-size:19px;font-weight:900;letter-spacing:.05em}.brand-name b{color:#ffd078}.brand-sub{font-size:10px;color:#abc5d9;text-transform:uppercase;letter-spacing:.14em;margin-top:3px}
+    .intro-copy{position:relative;z-index:1;max-width:390px}.eyebrow{display:inline-flex;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);border-radius:30px;padding:6px 10px;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#d7e6f0;font-weight:800}.intro h1{font-size:34px;line-height:1.13;letter-spacing:-.035em;margin:17px 0 13px}.intro p{font-size:13px;line-height:1.7;color:#bed1df;margin:0}.secure-note{position:relative;z-index:1;display:flex;align-items:center;gap:8px;font-size:10px;color:#b9cedd}.secure-note svg{color:#ffd078}
+    .panel{padding:54px 52px;display:flex;flex-direction:column;justify-content:center}.panel h2{font-size:23px;letter-spacing:-.025em;margin:0 0 7px;color:#163650}.panel>p{font-size:11px;color:var(--muted);line-height:1.55;margin:0 0 26px}.field{margin-bottom:15px}.field label{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.09em;font-weight:850;color:#5f7384;margin:0 0 6px}.control-wrap{position:relative}.control{width:100%;height:45px;border:1px solid #c9d5de;border-radius:9px;background:#fff;color:#233d51;padding:0 12px;font-size:12px;outline:none;transition:.16s}.control:focus{border-color:#3978a6;box-shadow:0 0 0 3px rgba(38,119,201,.1)}.password-control{padding-right:63px}.show-pass{position:absolute;right:7px;top:7px;height:31px;border:0;background:#edf2f5;color:#466176;border-radius:7px;padding:0 9px;font-size:9px;font-weight:800}.submit{width:100%;height:45px;border:0;border-radius:9px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;font-size:11px;font-weight:850;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:5px;box-shadow:0 8px 18px rgba(16,45,71,.18)}.submit:hover{filter:brightness(1.06)}.submit:disabled{opacity:.65;cursor:wait}.spinner{width:14px;height:14px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none}.submit.loading .spinner{display:block}@keyframes spin{to{transform:rotate(360deg)}}
+    .message{display:none;border-radius:8px;padding:10px 11px;font-size:10px;line-height:1.45;margin:0 0 15px}.message.show{display:block}.message.error{background:#fff0f1;border:1px solid #efc6ca;color:#943039}.message.info{background:#edf6fd;border:1px solid #cfe3f2;color:#315f82}.message.success{background:#eaf8f1;border:1px solid #c5e8d7;color:#176847}.fine{margin-top:19px;padding-top:17px;border-top:1px solid #e4eaee;color:#84919b;font-size:9px;line-height:1.55;text-align:center}.fine strong{color:#536777}
+    @media(max-width:760px){body{padding:12px}.shell{display:block;min-height:0}.intro{padding:24px;min-height:205px}.intro-copy{margin-top:32px}.intro h1{font-size:25px;margin:11px 0 7px}.intro p{font-size:11px}.secure-note{display:none}.panel{padding:31px 24px 36px}}
+    @media(prefers-color-scheme:dark){body{background:radial-gradient(circle at 15% 10%,rgba(242,173,47,.08),transparent 28%),#0c1720}.shell{background:#13222d;border-color:#30404c}.panel h2{color:#e3edf4}.panel>p,.fine{color:#94a5b2}.field label{color:#a9b8c3}.control{background:#0d1b25;border-color:#3a4b58;color:#edf4f8}.show-pass{background:#263844;color:#c4d1da}.fine{border-color:#30414c}.fine strong{color:#c3d0d8}.message.error{background:#321d22;border-color:#653039;color:#ffb5bc}.message.info{background:#142c3d;border-color:#29506a;color:#b9d9ee}.message.success{background:#163127;border-color:#285a43;color:#aee5ca}}
+  </style>
+  <script src="supabase.min.js"></script>
+  <script src="auth-config.js"></script>
+  <script src="auth.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <section class="intro" aria-label="HaulLinks training dashboard">
+      <div class="brand">
+        <div class="mark">
+          <img src="logo.png" alt="HaulLinks logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <svg width="38" height="38" viewBox="0 0 32 32" fill="none" aria-hidden="true" style="display:none"><path d="M6 18.5h14.8l3.2 3.8h2.5v3H24a3 3 0 0 1-6 0h-5a3 3 0 0 1-6 0H4.5v-4.7L6 18.5Z" fill="#102b46"/><path d="M8 11h13v7.5H8z" fill="#102b46"/><circle cx="10" cy="25.3" r="1.6" fill="#f2ad2f"/><circle cx="21" cy="25.3" r="1.6" fill="#f2ad2f"/></svg>
+        </div>
+        <div><div class="brand-name">HAUL<b>LINKS</b></div><div class="brand-sub">Training Load Board</div></div>
+      </div>
+      <div class="intro-copy"><span class="eyebrow">Authorized access</span><h1>Dispatcher workspace, secured.</h1><p>Sign in to search training freight, post loads, manage your board, and practice professional dispatch workflows.</p></div>
+      <div class="secure-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Authentication provided through Supabase.</div>
+    </section>
+
+    <section class="panel">
+      <h2>Sign in to HaulLinks</h2>
+      <p>Use an account issued by the HaulLinks administrator. Public registration is not available.</p>
+      <div class="message" id="loginMessage" role="alert" aria-live="polite"></div>
+      <form id="loginForm" novalidate>
+        <div class="field"><label for="email">Email address</label><input class="control" id="email" name="email" type="email" autocomplete="username" inputmode="email" required placeholder="name@company.com"></div>
+        <div class="field"><label for="password">Password</label><div class="control-wrap"><input class="control password-control" id="password" name="password" type="password" autocomplete="current-password" required><button class="show-pass" type="button" id="showPassword" aria-label="Show password">Show</button></div></div>
+        <button class="submit" id="loginButton" type="submit"><span class="spinner" aria-hidden="true"></span><span id="loginButtonText">Sign in securely</span></button>
+      </form>
+      <div class="fine"><strong>Account required.</strong> Contact your HaulLinks administrator if your account is disabled or you have forgotten your password.</div>
+    </section>
+  </main>
+
+  <script>
+    'use strict';
+    const $ = id => document.getElementById(id);
+    const params = new URLSearchParams(location.search);
+    const requestedNext = params.get('next') || 'index.html';
+    const auth = window.HaulLinksAuth;
+
+    function showMessage(text, type='error') {
+      const box = $('loginMessage');
+      box.textContent = text;
+      box.className = `message show ${type}`;
+    }
+
+    function setLoading(loading) {
+      $('loginButton').disabled = loading;
+      $('loginButton').classList.toggle('loading', loading);
+      $('loginButtonText').textContent = loading ? 'Checking account…' : 'Sign in securely';
+    }
+
+    const reasonMessages = {
+      disabled: 'This account has been disabled. Contact the HaulLinks administrator.',
+      signed_out: 'You have been logged out securely.',
+      expired: 'Your session expired. Sign in again to continue.',
+      setup: 'The administrator must run SUPABASE_SETUP.sql before users can sign in.'
+    };
+    if (reasonMessages[params.get('reason')]) showMessage(reasonMessages[params.get('reason')], params.get('reason') === 'disabled' ? 'error' : 'info');
+
+    const rememberedEmail = localStorage.getItem('haullinks_last_login_email');
+    if (rememberedEmail) $('email').value = rememberedEmail;
+
+    $('showPassword').addEventListener('click', () => {
+      const visible = $('password').type === 'text';
+      $('password').type = visible ? 'password' : 'text';
+      $('showPassword').textContent = visible ? 'Show' : 'Hide';
+      $('showPassword').setAttribute('aria-label', visible ? 'Show password' : 'Hide password');
+    });
+
+    $('loginForm').addEventListener('submit', async event => {
+      event.preventDefault();
+      const email = $('email').value.trim();
+      const password = $('password').value;
+      if (!email || !password) { showMessage('Enter both your email address and password.'); return; }
+      if (!auth?.client) { showMessage(auth?.configurationError?.message || 'Authentication is not configured.'); return; }
+      setLoading(true);
+      $('loginMessage').className = 'message';
+      try {
+        await auth.signIn(email, password);
+        localStorage.setItem('haullinks_last_login_email', email.toLowerCase());
+        showMessage('Sign-in successful. Opening your dashboard…', 'success');
+        setTimeout(() => auth.redirectToDashboard(requestedNext), 250);
+      } catch (error) {
+        const friendly = error.code === 'access_setup'
+          ? 'The administrator must run SUPABASE_SETUP.sql before users can sign in.'
+          : error.code === 'disabled'
+            ? 'This account is disabled. Contact the HaulLinks administrator.'
+            : error.code === 'credentials'
+              ? 'The email or password is incorrect.'
+              : 'Unable to sign in. Check your connection and try again.';
+        showMessage(friendly);
+        $('password').value = '';
+        $('password').focus();
+      } finally { setLoading(false); }
+    });
+
+    if (auth?.client && !params.get('reason')) {
+      auth.requireUser().then(() => auth.redirectToDashboard(requestedNext)).catch(() => {});
+    }
+  </script>
+</body>
+</html>
